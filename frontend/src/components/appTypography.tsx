@@ -10,6 +10,7 @@ type AppTypographyProps = {
   children: React.ReactNode | string;
   className: string;
   as?: asType;
+  href?: string;
   variant?: variant;
   color?: color;
 };
@@ -18,6 +19,7 @@ export const AppTypography = ({
   children,
   className,
   as = 'li',
+  href = '#',
   variant = 'small',
   color = 'blue-gray',
 }: AppTypographyProps): JSX.Element => {
@@ -26,6 +28,7 @@ export const AppTypography = ({
       as={as}
       variant={variant}
       color={color}
+      href={href}
       placeholder={undefined}
       className={className}
       children={children}

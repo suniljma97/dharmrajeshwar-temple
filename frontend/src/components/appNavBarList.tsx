@@ -1,6 +1,6 @@
 import { AppTypography } from './appTypography';
 
-type NavBarList = {
+export type NavBarList = {
   name: string;
   path: string;
   className?: string;

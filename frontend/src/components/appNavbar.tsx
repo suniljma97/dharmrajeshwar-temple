@@ -1,27 +1,32 @@
 import React from 'react';
 import { Navbar, Collapse } from '@material-tailwind/react';
 import { AppNavBarList, NavBarList } from './appNavBarList';
-import { color, variant } from '@material-tailwind/react/types/components/navbar';
+import {
+  color,
+  variant,
+} from '@material-tailwind/react/types/components/navbar';
 
 type AppNavbarProps = {
   children: React.ReactNode;
   className: string;
   openNav: boolean;
-  variant?:variant,
-  color?:color,
-  fullWidth?:boolean,
+  variant?: variant;
+  color?: color;
+  fullWidth?: boolean;
   setOpenNav: (bool: boolean) => void;
   navList: { data: NavBarList[]; className: string };
+  shadow?: boolean;
 };
 
 export const AppNavbar = ({
   children,
   className,
   openNav,
-  variant='filled',
-  fullWidth=false,
-  color='white',
+  variant = 'filled',
+  fullWidth = false,
+  color = 'white',
   setOpenNav,
+  shadow = true,
   navList,
 }: AppNavbarProps): JSX.Element => {
   const handleWindowResize = (): boolean | void =>
@@ -38,6 +43,7 @@ export const AppNavbar = ({
       className={className}
       color={color}
       fullWidth={fullWidth}
+      shadow={shadow}
       variant={variant}
       placeholder={undefined}
       children={

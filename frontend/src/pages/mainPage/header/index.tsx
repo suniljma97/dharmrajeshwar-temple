@@ -26,23 +26,19 @@ export const Header = (): JSX.Element => {
       variant="gradient"
       openNav={openNav}
       setOpenNav={setOpenNav}
-      className="mx-auto max-w-screen-xl px-6 py-3"
+      className="mx-auto min-w-full px-6 py-3"
     >
-      <div className="flex items-center justify-between text-blue-gray-900">
-        <AppTypography
-          as="a"
-          variant="h6"
-          className="mr-4 cursor-pointer py-1.5"
-        >
+      <div className="flex text-blue-gray-900">
+        <AppTypography as="a" variant="h6" className="mr-4 py-1.5">
           {t('templeName')}
         </AppTypography>
         <div className="hidden lg:block">
           <AppNavBarList
             data={navListData}
-            className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6"
+            className="my-2 py-1.5 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6"
           />
         </div>
-        <div className="hidden lg:block">
+        <div className="ml-auto flex-end">
           <AppLanguageSelector />
         </div>
         <AppIconButton

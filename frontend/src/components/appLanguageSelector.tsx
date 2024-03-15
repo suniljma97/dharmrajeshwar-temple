@@ -20,12 +20,12 @@ export const AppLanguageSelector = (): JSX.Element => {
     i18n.changeLanguage(lng);
   };
   return (
-    <div className="w-72">
+    <div className="w-50">
       <Select
-        label="Select Version"
+        label="Select a language"
         value={value}
         onChange={changeLanguage}
-        placeholder={undefined}
+        placeholder="Select.."
       >
         {languages.map(({ code, lang }) => (
           <Option value={code}>{lang}</Option>

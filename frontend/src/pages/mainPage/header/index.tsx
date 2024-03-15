@@ -4,6 +4,8 @@ import { AppNavbar } from '../../../components/appNavbar';
 import { AppIconButton } from '../../../components/appIconButton';
 import { AppTypography } from '../../../components/appTypography';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { useTranslation } from 'react-i18next';
+import { AppLanguageSelector } from '../../../components/appLanguageSelector';
 
 const navListData: NavBarList[] = [
   { name: '1', path: '#' },
@@ -12,6 +14,7 @@ const navListData: NavBarList[] = [
 ];
 
 export const Header = (): JSX.Element => {
+  const { t } = useTranslation();
   const [openNav, setOpenNav] = React.useState(false);
   return (
     <AppNavbar
@@ -31,13 +34,16 @@ export const Header = (): JSX.Element => {
           variant="h6"
           className="mr-4 cursor-pointer py-1.5"
         >
-          Material Tailwind
+          {t('templeName')}
         </AppTypography>
         <div className="hidden lg:block">
           <AppNavBarList
             data={navListData}
             className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6"
           />
+        </div>
+        <div className="hidden lg:block">
+          <AppLanguageSelector />
         </div>
         <AppIconButton
           onClick={() => setOpenNav(!openNav)}

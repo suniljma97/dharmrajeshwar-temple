@@ -8,9 +8,9 @@ import { useTranslation } from 'react-i18next';
 import { AppLanguageSelector } from '../../../components/appLanguageSelector';
 
 const navListData: NavBarList[] = [
-  { name: '1', path: '#' },
-  { name: '2', path: '#' },
-  { name: '2', path: '#' },
+  { name: 'Home', path: '#' },
+  { name: 'Gallery ', path: '#' },
+  { name: 'About', path: '#' },
 ];
 
 export const Header = (): JSX.Element => {
